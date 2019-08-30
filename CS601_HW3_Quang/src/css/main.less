@@ -1,0 +1,53 @@
+@import "clearless/mixins/all";
+@import "theme_color";
+
+.header-footer-mixin() {
+  color: #EAE6DA;
+  font-family: Comic Sans MS;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #000000;
+  background-color: @color-body-theme;
+  div {
+    .border-radius(0) !important;
+  }
+  div.header {
+    .header-footer-mixin;
+    #gradient > .vertical(@color-header-theme, rgba(20, 16, 15, 0.74));
+  }
+
+  div.image{
+    img {
+      margin-left: 50px;
+    }
+  }
+  div.button {
+    button {
+      font-weight: bold;
+      font-size: 120%;
+      width: 150px;
+      height: 35px;
+      margin-top: 80px;
+      background-color: cadetblue;
+      .border-radius(50%);
+      &:hover {
+        color: #ffff00;
+        font-style: italic;
+      }
+    }
+  }
+
+  footer {
+    .header-footer-mixin;
+    #gradient > .vertical(@color-footer-theme, rgba(30, 11, 15, 0.74));
+    text-align: center;
+    //clear: left;
+    margin-top: 10px;
+    height: 30px;
+  }
+}
